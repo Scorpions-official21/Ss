@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Impianti Elettrici ed Idraulici | Progettazione, Installazione e Assistenza</title>
+    <style>
+        :root {
+            --primary-blue: #0b3c5d;
+            --accent-orange: #d9534f;
+            --whatsapp-green: #25D366;
+            --dark-gray: #1d2731;
+            --light-bg: #f8f9fa;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--light-bg);
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header e Contatti */
+        header {
+            background-color: #fff;
+            padding: 15px 20px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.4rem;
+            font-weight: bold;
+            color: var(--primary-blue);
+        }
+
+        .header-btn {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 10px 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(11, 60, 93, 0.85), rgba(11, 60, 93, 0.85)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80') center/cover;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.2rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-buttons {
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+        }
+
+        .btn-call {
+            background-color: var(--accent-orange);
+            color: white;
+        }
+
+        .btn-wa {
+            background-color: var(--whatsapp-green);
+            color: white;
+        }
+
+        /* Sezione Servizi */
+        .services {
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .services h2 {
+            text-align: center;
+            color: var(--primary-blue);
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        .card {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+            border-top: 4px solid var(--primary-blue);
+        }
+
+        .card h3 {
+            color: var(--primary-blue);
+            margin-bottom: 15px;
+        }
+
+        .card ul {
+            list-style-type: none;
+        }
+
+        .card li {
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        .card li::before {
+            content: "✓";
+            color: var(--primary-blue);
+            position: absolute;
+            left: 0;
+            font-weight: bold;
+        }
+
+        /* Sezione Perché Sceglierci */
+        .why-us {
+            background-color: #e9ecef;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .why-us h2 {
+            color: var(--primary-blue);
+            margin-bottom: 20px;
+        }
+
+        .features {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .feature-item {
+            flex: 1;
+            min-width: 250px;
+        }
+
+        /* Contatti / Footer */
+        footer {
+            background-color: var(--dark-gray);
+            color: white;
+            padding: 40px 20px 20px;
+            text-align: center;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .contact-info p {
+            margin-bottom: 8px;
+        }
+
+        /* Tasto WhatsApp Flottante */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--whatsapp-green);
+            color: white;
+            border-radius: 50px;
+            padding: 12px 20px;
+            font-weight: bold;
+            text-decoration: none;
+            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            z-index: 1000;
+        }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 1.6rem; }
+            .cta-buttons { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">IMPIANTI ELETTRO-IDRAULICI</div>
+        <a href="tel:+393000000000" class="header-btn">Chiama Ora</a>
+    </header>
+
+    <section class="hero">
+        <h1>Soluzioni Professionali Elettriche ed Idrauliche</h1>
+        <p>Progettazione, installazione, manutenzione e pronto intervento per ambienti civili, commerciali e industriali.</p>
+        <div class="cta-buttons">
+            <a href="tel:+393000000000" class="btn btn-call">📞 Chiamata Diretta</a>
+            <a href="https://wa.me/393000000000?text=Ciao,%20vorrei%20informazioni%20per%20un%20preventivo" class="btn btn-wa">💬 Scrivici su WhatsApp</a>
+        </div>
+    </section>
+
+    <section class="services">
+        <h2>I Nostri Servizi</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>⚡ Impianti Elettrici</h3>
+                <ul>
+                    <li>Installazione e rifacimento impianti a norma (D.M. 37/08)</li>
+                    <li>Rilascio Dichiarazione di Conformità (DiCo)</li>
+                    <li>Quadri elettrici, salvavita e domotica</li>
+                    <li>Impianti di illuminazione LED indoor/outdoor</li>
+                    <li>Citofonia, videosorveglianza e antifurti</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>💧 Impianti Idraulici & Termici</h3>
+                <ul>
+                    <li>Impianti idro-sanitari e ristrutturazione bagno</li>
+                    <li>Installazione e sostituzione caldaie e climatizzatori</li>
+                    <li>Impianti di riscaldamento a pavimento</li>
+                    <li>Ricerca perdite e riparazioni rapide</li>
+                    <li>Installazione pompe di calore e autoclavi</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="why-us">
+        <h2>Perché Scegliere la Nostra Ditta</h2>
+        <div class="features">
+            <div class="feature-item">
+                <h4>📜 Certificazione & Certificati</h4>
+                <p>Lavori eseguiti rigorosamente a norma di legge con rilascio di documentazione ufficiale.</p>
+            </div>
+            <div class="feature-item">
+                <h4>⏱️ Tempestività & Affidabilità</h4>
+                <p>Interventi rapidi, diagnosi precise e materiali di prima qualità delle migliori marche.</p>
+            </div>
+            <div class="feature-item">
+                <h4>📋 Preventivi Trasparenti</h4>
+                <p>Sopralluoghi e preventivi chiari senza sorprese finali.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tasto Fisso WhatsApp Mobile -->
+    <a href="https://wa.me/393000000000?text=Ciao,%20ho%20bisogno%20di%20un%20intervento" class="whatsapp-float" target="_blank">
+        💬 WhatsApp
+    </a>
+
+    <footer>
+        <div class="contact-info">
+            <h3>Richiedi un Preventivo o un Sopralluogo</h3>
+            <p>📍 Sede / Zona Operativa: Roma e Provincia</p>
+            <p>📞 Telefono: +39 300 000 0000</p>
+            <p>✉️ Email: info@dittaimpianti.it</p>
+            <p>🕒 Orari: Lunedì - Venerdì: 08:00 - 18:00</p>
+        </div>
+        <p>&copy; 2026 Ditta Impianti Elettrici ed Idraulici. Tutti i diritti riservati.</p>
+    </footer>
+
+</body>
+</html>
