@@ -3,295 +3,295 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Impianti Elettrici ed Idraulici | Progettazione, Installazione e Assistenza</title>
+    <title>VOLT & HYDRO | Impianti Elettrici e Idraulici di Pregio</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <!-- Font Inter & Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        heading: ['Montserrat', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            dark: '#0B0F17',
+                            card: '#131924',
+                            border: '#212B3D',
+                            accent: '#F59E0B', // Amber Gold
+                            cyan: '#06B6D4',   // Electric Hydro Cyan
+                            blue: '#2563EB',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        :root {
-            --primary-blue: #0b3c5d;
-            --accent-orange: #d9534f;
-            --whatsapp-green: #25D366;
-            --dark-gray: #1d2731;
-            --light-bg: #f8f9fa;
+        html { scroll-behavior: smooth; }
+        .bg-grid {
+            background-image: radial-gradient(rgba(255, 255, 255, 0.07) 1px, transparent 1px);
+            background-size: 30px 30px;
         }
-
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        .glow-cyan {
+            box-shadow: 0 0 35px -5px rgba(6, 182, 212, 0.3);
         }
-
-        body {
-            background-color: var(--light-bg);
-            color: #333;
-            line-height: 1.6;
-        }
-
-        /* Header e Contatti */
-        header {
-            background-color: #fff;
-            padding: 15px 20px;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.4rem;
-            font-weight: bold;
-            color: var(--primary-blue);
-        }
-
-        .header-btn {
-            background-color: var(--primary-blue);
-            color: white;
-            padding: 10px 18px;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: bold;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: linear-gradient(rgba(11, 60, 93, 0.85), rgba(11, 60, 93, 0.85)), url('https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&w=1200&q=80') center/cover;
-            color: white;
-            padding: 80px 20px;
-            text-align: center;
-        }
-
-        .hero h1 {
-            font-size: 2.2rem;
-            margin-bottom: 15px;
-        }
-
-        .hero p {
-            font-size: 1.1rem;
-            margin-bottom: 25px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .cta-buttons {
-            display: flex;
-            gap: 15px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .btn {
-            padding: 12px 25px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1rem;
-        }
-
-        .btn-call {
-            background-color: var(--accent-orange);
-            color: white;
-        }
-
-        .btn-wa {
-            background-color: var(--whatsapp-green);
-            color: white;
-        }
-
-        /* Sezione Servizi */
-        .services {
-            padding: 50px 20px;
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .services h2 {
-            text-align: center;
-            color: var(--primary-blue);
-            margin-bottom: 30px;
-            font-size: 1.8rem;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 20px;
-        }
-
-        .card {
-            background: white;
-            padding: 25px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-            border-top: 4px solid var(--primary-blue);
-        }
-
-        .card h3 {
-            color: var(--primary-blue);
-            margin-bottom: 15px;
-        }
-
-        .card ul {
-            list-style-type: none;
-        }
-
-        .card li {
-            margin-bottom: 10px;
-            padding-left: 20px;
-            position: relative;
-        }
-
-        .card li::before {
-            content: "✓";
-            color: var(--primary-blue);
-            position: absolute;
-            left: 0;
-            font-weight: bold;
-        }
-
-        /* Sezione Perché Sceglierci */
-        .why-us {
-            background-color: #e9ecef;
-            padding: 40px 20px;
-            text-align: center;
-        }
-
-        .why-us h2 {
-            color: var(--primary-blue);
-            margin-bottom: 20px;
-        }
-
-        .features {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            flex-wrap: wrap;
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .feature-item {
-            flex: 1;
-            min-width: 250px;
-        }
-
-        /* Contatti / Footer */
-        footer {
-            background-color: var(--dark-gray);
-            color: white;
-            padding: 40px 20px 20px;
-            text-align: center;
-        }
-
-        .contact-info {
-            margin-bottom: 20px;
-        }
-
-        .contact-info p {
-            margin-bottom: 8px;
-        }
-
-        /* Tasto WhatsApp Flottante */
-        .whatsapp-float {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            background-color: var(--whatsapp-green);
-            color: white;
-            border-radius: 50px;
-            padding: 12px 20px;
-            font-weight: bold;
-            text-decoration: none;
-            box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            z-index: 1000;
-        }
-
-        @media (max-width: 600px) {
-            .hero h1 { font-size: 1.6rem; }
-            .cta-buttons { flex-direction: column; }
+        .glow-amber {
+            box-shadow: 0 0 35px -5px rgba(245, 158, 11, 0.3);
         }
     </style>
 </head>
-<body>
+<body class="bg-brand-dark text-slate-200 font-sans antialiased selection:bg-brand-accent selection:text-black">
 
-    <header>
-        <div class="logo">IMPIANTI ELETTRO-IDRAULICI</div>
-        <a href="tel:+393000000000" class="header-btn">Chiama Ora</a>
+    <!-- Header / Navbar -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-brand-dark/80 backdrop-blur-md border-b border-brand-border">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-amber-500 to-brand-cyan-500 flex items-center justify-center p-0.5 shadow-lg group-hover:scale-105 transition-transform">
+                    <div class="w-full h-full bg-brand-dark rounded-[10px] flex items-center justify-center">
+                        <i data-lucide="zap" class="w-5 h-5 text-amber-400"></i>
+                    </div>
+                </div>
+                <div>
+                    <span class="font-heading font-black text-xl tracking-wider text-white block leading-none">NOME<span class="text-amber-400">DITTA</span></span>
+                    <span class="text-[10px] uppercase tracking-widest text-slate-400 font-semibold">Elettrica & Idraulica</span>
+                </div>
+            </a>
+
+            <!-- Desktop Nav -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#servizi" class="hover:text-amber-400 transition-colors">Servizi</a>
+                <a href="#perche-noi" class="hover:text-amber-400 transition-colors">Perché Noi</a>
+                <a href="#calcolatore" class="hover:text-amber-400 transition-colors">Preventivo Rapido</a>
+                <a href="#progetti" class="hover:text-amber-400 transition-colors">Lavori</a>
+                <a href="#contatti" class="hover:text-amber-400 transition-colors">Contatti</a>
+            </nav>
+
+            <!-- Action Buttons -->
+            <div class="hidden sm:flex items-center gap-4">
+                <a href="tel:+393000000000" class="flex items-center gap-2 text-sm font-semibold text-white bg-slate-800 hover:bg-slate-700 px-4 py-2.5 rounded-lg border border-slate-700 transition-all">
+                    <i data-lucide="phone-call" class="w-4 h-4 text-emerald-400"></i>
+                    <span>Chiama Ora</span>
+                </a>
+                <a href="#contatti" class="flex items-center gap-2 text-sm font-semibold text-black bg-amber-400 hover:bg-amber-300 px-5 py-2.5 rounded-lg shadow-lg shadow-amber-500/20 transition-all hover:scale-105">
+                    <span>Richiedi Sopralluogo</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+            </div>
+        </div>
     </header>
 
-    <section class="hero">
-        <h1>Soluzioni Professionali Elettriche ed Idrauliche</h1>
-        <p>Progettazione, installazione, manutenzione e pronto intervento per ambienti civili, commerciali e industriali.</p>
-        <div class="cta-buttons">
-            <a href="tel:+393000000000" class="btn btn-call">📞 Chiamata Diretta</a>
-            <a href="https://wa.me/393000000000?text=Ciao,%20vorrei%20informazioni%20per%20un%20preventivo" class="btn btn-wa">💬 Scrivici su WhatsApp</a>
-        </div>
-    </section>
+    <!-- Hero Section -->
+    <section class="relative pt-36 pb-20 md:pt-48 md:pb-32 overflow-hidden bg-grid">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-brand-dark/50 to-brand-dark pointer-events-none"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/20 text-amber-400 text-xs font-semibold uppercase tracking-wider mb-6">
+                    <span class="w-2 h-2 rounded-full bg-amber-400 animate-ping"></span>
+                    Certificazioni D.M. 37/08 Abilitazioni A & C
+                </div>
+                <h1 class="font-heading font-black text-4xl sm:text-6xl text-white leading-tight mb-6">
+                    Impianti di Precisione per Ambienti <span class="text-transparent bg-clip-text bg-gradient-to-r from-amber-400 via-amber-200 to-cyan-400">Moderni e Sicuri.</span>
+                </h1>
+                <p class="text-lg text-slate-400 mb-8 leading-relaxed">
+                    Progettazione, installazione e manutenzione avanzata per impianti elettrici, idro-termo-sanitari e domotica. Garanzia di conformità, massima efficienza energetica e finiture a regola d'arte.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4">
+                    <a href="https://wa.me/393000000000?text=Ciao,%20vorrei%20informazioni%20per%20un%20preventivo" target="_blank" class="flex items-center justify-center gap-3 bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-8 py-4 rounded-xl shadow-xl shadow-emerald-500/20 transition-all hover:scale-105">
+                        <i data-lucide="message-square" class="w-5 h-5"></i>
+                        <span>Preventivo WhatsApp Rapido</span>
+                    </a>
+                    <a href="#calcolatore" class="flex items-center justify-center gap-2 bg-brand-card hover:bg-slate-800 text-white font-semibold px-8 py-4 rounded-xl border border-brand-border transition-all">
+                        <i data-lucide="calculator" class="w-5 h-5 text-cyan-400"></i>
+                        <span>Calcola Stima Online</span>
+                    </a>
+                </div>
+            </div>
 
-    <section class="services">
-        <h2>I Nostri Servizi</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>⚡ Impianti Elettrici</h3>
-                <ul>
-                    <li>Installazione e rifacimento impianti a norma (D.M. 37/08)</li>
-                    <li>Rilascio Dichiarazione di Conformità (DiCo)</li>
-                    <li>Quadri elettrici, salvavita e domotica</li>
-                    <li>Impianti di illuminazione LED indoor/outdoor</li>
-                    <li>Citofonia, videosorveglianza e antifurti</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>💧 Impianti Idraulici & Termici</h3>
-                <ul>
-                    <li>Impianti idro-sanitari e ristrutturazione bagno</li>
-                    <li>Installazione e sostituzione caldaie e climatizzatori</li>
-                    <li>Impianti di riscaldamento a pavimento</li>
-                    <li>Ricerca perdite e riparazioni rapide</li>
-                    <li>Installazione pompe di calore e autoclavi</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <section class="why-us">
-        <h2>Perché Scegliere la Nostra Ditta</h2>
-        <div class="features">
-            <div class="feature-item">
-                <h4>📜 Certificazione & Certificati</h4>
-                <p>Lavori eseguiti rigorosamente a norma di legge con rilascio di documentazione ufficiale.</p>
-            </div>
-            <div class="feature-item">
-                <h4>⏱️ Tempestività & Affidabilità</h4>
-                <p>Interventi rapidi, diagnosi precise e materiali di prima qualità delle migliori marche.</p>
-            </div>
-            <div class="feature-item">
-                <h4>📋 Preventivi Trasparenti</h4>
-                <p>Sopralluoghi e preventivi chiari senza sorprese finali.</p>
+            <!-- Stats Bar -->
+            <div class="mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 p-6 bg-brand-card/80 border border-brand-border rounded-2xl backdrop-blur-sm">
+                <div class="p-4 border-r border-brand-border/50 last:border-0">
+                    <div class="font-heading font-black text-3xl text-amber-400 mb-1">15+</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider font-medium">Anni di Esperienza</div>
+                </div>
+                <div class="p-4 border-r border-brand-border/50 last:border-0">
+                    <div class="font-heading font-black text-3xl text-cyan-400 mb-1">100%</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider font-medium">Conformità D.M. 37/08</div>
+                </div>
+                <div class="p-4 border-r border-brand-border/50 last:border-0">
+                    <div class="font-heading font-black text-3xl text-white mb-1">1.200+</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider font-medium">Interventi Completati</div>
+                </div>
+                <div class="p-4">
+                    <div class="font-heading font-black text-3xl text-emerald-400 mb-1">24/48h</div>
+                    <div class="text-xs text-slate-400 uppercase tracking-wider font-medium">Tempo Medio Risposta</div>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Tasto Fisso WhatsApp Mobile -->
-    <a href="https://wa.me/393000000000?text=Ciao,%20ho%20bisogno%20di%20un%20intervento" class="whatsapp-float" target="_blank">
-        💬 WhatsApp
-    </a>
+    <!-- Services Section -->
+    <section id="servizi" class="py-24 bg-brand-dark relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs uppercase tracking-widest text-amber-400 font-bold mb-3">I Nostri Ambito di Intervento</h2>
+                <p class="font-heading font-extrabold text-3xl sm:text-4xl text-white">Servizi Specializzati Elettrici ed Idraulici</p>
+            </div>
 
-    <footer>
-        <div class="contact-info">
-            <h3>Richiedi un Preventivo o un Sopralluogo</h3>
-            <p>📍 Sede / Zona Operativa: Roma e Provincia</p>
-            <p>📞 Telefono: +39 300 000 0000</p>
-            <p>✉️ Email: info@dittaimpianti.it</p>
-            <p>🕒 Orari: Lunedì - Venerdì: 08:00 - 18:00</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Elettrico -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-border hover:border-amber-400/50 transition-all glow-amber group">
+                    <div class="w-14 h-14 rounded-xl bg-amber-400/10 border border-amber-400/30 flex items-center justify-center text-amber-400 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="zap" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-2xl text-white mb-4">Divisione Elettrica & Domotica</h3>
+                    <p class="text-slate-400 mb-6 text-sm leading-relaxed">Sviluppiamo impianti elettrici ad alte prestazioni, con particolare attenzione alla sicurezza, al risparmio energetico e all'integrazione smart.</p>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                            <span>Rifacimento e adeguamento impianti civili e industriali</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                            <span>Quadri elettrici di distribuzione, salvavita e certificazioni DiCo</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                            <span>Sistemi di Domotica e Smart Home (BTicino, KNX)</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-amber-400 flex-shrink-0"></i>
+                            <span>Illuminazione architettonica LED e impianti fotovoltaici</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Idraulico -->
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-border hover:border-cyan-400/50 transition-all glow-cyan group">
+                    <div class="w-14 h-14 rounded-xl bg-cyan-400/10 border border-cyan-400/30 flex items-center justify-center text-cyan-400 mb-6 group-hover:scale-110 transition-transform">
+                        <i data-lucide="droplet" class="w-8 h-8"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-2xl text-white mb-4">Divisione Idraulica & Termica</h3>
+                    <p class="text-slate-400 mb-6 text-sm leading-relaxed">Soluzioni idro-termo-sanitarie all'avanguardia per il massimo comfort abitativo ed efficientamento termico.</p>
+                    <ul class="space-y-3 text-sm text-slate-300">
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 flex-shrink-0"></i>
+                            <span>Impianti idrosanitari chiavi in mano e ristrutturazione bagni</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 flex-shrink-0"></i>
+                            <span>Installazione e sostituzione pompe di calore e caldaie</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 flex-shrink-0"></i>
+                            <span>Riscaldamento e raffrescamento radiante a pavimento</span>
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i data-lucide="check-circle-2" class="w-5 h-5 text-cyan-400 flex-shrink-0"></i>
+                            <span>Ricerca perdite d'acqua non invasiva e videoispezioni</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </div>
-        <p>&copy; 2026 Ditta Impianti Elettrici ed Idraulici. Tutti i diritti riservati.</p>
-    </footer>
+    </section>
 
-</body>
-</html>
+    <!-- Calcolatore Preventivo Rapido -->
+    <section id="calcolatore" class="py-20 bg-slate-900 border-y border-brand-border">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-10">
+                <span class="text-xs uppercase tracking-widest text-cyan-400 font-bold">Stima Istantanea</span>
+                <h2 class="font-heading font-bold text-3xl text-white mt-2">Calcola un’idea di spesa per i tuoi lavori</h2>
+            </div>
+
+            <div class="bg-brand-card p-6 sm:p-10 rounded-2xl border border-brand-border shadow-2xl">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-8">
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Tipo di Intervento</label>
+                        <select id="calc-type" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400">
+                            <option value="elettrico">Impianto Elettrico Completo</option>
+                            <option value="idraulico">Impianto Idraulico / Bagno</option>
+                            <option value="entrambi">Combo Elettrico + Idraulico</option>
+                            <option value="manutenzione">Manutenzione / Adeguamento</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label class="block text-xs uppercase tracking-wider text-slate-400 font-semibold mb-2">Dimensione Immobile (MQ)</label>
+                        <input type="number" id="calc-mq" value="80" class="w-full bg-brand-dark border border-brand-border rounded-xl px-4 py-3 text-white focus:outline-none focus:border-amber-400">
+                    </div>
+                </div>
+
+                <div class="p-6 bg-brand-dark rounded-xl border border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4">
+                    <div>
+                        <div class="text-xs text-slate-400 uppercase tracking-wider">Stima Indicativa Lavori</div>
+                        <div id="calc-result" class="text-3xl font-heading font-extrabold text-amber-400">€ 2.800 - € 3.800</div>
+                        <div class="text-[11px] text-slate-500 mt-1">*Materiali di alta qualità e certificazioni incluse. Sopralluogo necessario.</div>
+                    </div>
+                    <button onclick="sendEstimateWA()" class="w-full sm:w-auto bg-emerald-500 hover:bg-emerald-400 text-black font-bold px-6 py-3 rounded-xl transition-all flex items-center justify-center gap-2">
+                        <i data-lucide="message-square" class="w-4 h-4"></i>
+                        <span>Conferma via WhatsApp</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Us Section -->
+    <section id="perche-noi" class="py-24 bg-brand-dark">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-border">
+                    <div class="w-12 h-12 rounded-lg bg-amber-400/10 flex items-center justify-center text-amber-400 mb-6">
+                        <i data-lucide="shield-check" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Certificazione di Legge</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Rilasciamo dichiarazione di conformità (DiCo) ai sensi del D.M. 37/08 per ogni lavoro eseguito, garantendo la commerciabilità ed agibilità degli immobili.</p>
+                </div>
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-border">
+                    <div class="w-12 h-12 rounded-lg bg-cyan-400/10 flex items-center justify-center text-cyan-400 mb-6">
+                        <i data-lucide="wrench" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Materiali Top di Gamma</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Utilizziamo esclusivamente componenti certificati delle migliori marche del settore (BTicino, Gewiss, Geberit, Daikin, Vaillant).</p>
+                </div>
+                <div class="bg-brand-card p-8 rounded-2xl border border-brand-border">
+                    <div class="w-12 h-12 rounded-lg bg-emerald-400/10 flex items-center justify-center text-emerald-400 mb-6">
+                        <i data-lucide="clock" class="w-6 h-6"></i>
+                    </div>
+                    <h3 class="font-heading font-bold text-xl text-white mb-3">Puntualità & Pulizia</h3>
+                    <p class="text-slate-400 text-sm leading-relaxed">Rispetto rigoroso dei tempi di consegna stabiliti e massima cura della pulizia del cantiere al termine di ogni giornata di intervento.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Form Section -->
+    <section id="contatti" class="py-24 bg-slate-900 border-t border-brand-border relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+                <div>
+                    <span class="text-xs uppercase tracking-widest text-amber-400 font-bold">Inizia il tuo Progetto</span>
+                    <h2 class="font-heading font-extrabold text-3xl sm:text-4xl text-white mt-2 mb-6">Richiedi un Sopralluogo Gratuito</h2>
+                    <p class="text-slate-400 mb-8 leading-relaxed">Compila il modulo per essere ricontattato entro 24 ore da un nostro tecnico specializzato per analizzare le tue esigenze.</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center text-amber-400">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-slate-400">Zona Operativa</div>
+                                <div class="font-semibold text-white">Roma, Milano e Province Limitrofe</div>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-brand-card border border-brand-border flex items-center justify-center text-emerald-400">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <div class="text-xs text-
